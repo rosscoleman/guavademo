@@ -1,0 +1,11 @@
+build
+.gradle
+bin
+home
+.project
+.classpath
+.settings
+*environmental.properties
+.runtime
+.groovy/
+*version.properties
