@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
+import com.google.common.collect.ImmutableBiMap;
 import com.google.common.collect.ImmutableMap;
 
 public class BiMapTests {
@@ -57,6 +58,23 @@ public class BiMapTests {
 		assertEquals("AZ", biMap.get("Arizona")); //We changed the original map too! Inverse BiMap is a view.
 		System.out.println(biMap);
 		System.out.println(inverseBiMap);
+	}
+	
+	@Test
+	public void testImmutableBiMap() {
+		BiMap<String, String> biMap = ImmutableBiMap.of(
+				"Alabama", "AL", 
+				"Alaska", "AK", 
+				"Arizona", "AZ", 
+				"Arkansas", "AR");
+		
+		assertEquals(4, biMap.size());
+		assertEquals("AL", biMap.get("Alabama"));
+		System.out.println(biMap);
+		
+		// How do we go the opposite direction?
+		assertNull(biMap.get("AL")); //Not this
+		assertEquals("Alabama", biMap.inverse().get("AL")); // Use BiMap.inverse() to get the inverse map
 	}
 
 }
