@@ -43,16 +43,20 @@ public class BiMapTests {
 		
 		assertEquals(8, biMap.size());
 		assertEquals("MO", biMap.get("Missouri"));
+		System.out.println(biMap);
 		
 		// How do we go the opposite direction?
 		assertNull(biMap.get("MO")); //Not this
 		assertEquals("Missouri", biMap.inverse().get("MO")); // Use BiMap.inverse() to get the inverse map
 		
 		BiMap<String, String> inverseBiMap = biMap.inverse();
+		System.out.println(inverseBiMap);
 		assertNull(inverseBiMap.get("AZ"));
 		inverseBiMap.put("AZ", "Arizona");
 		assertEquals("Arizona", inverseBiMap.get("AZ"));
 		assertEquals("AZ", biMap.get("Arizona")); //We changed the original map too! Inverse BiMap is a view.
+		System.out.println(biMap);
+		System.out.println(inverseBiMap);
 	}
 
 }
