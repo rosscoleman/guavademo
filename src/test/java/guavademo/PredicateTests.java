@@ -48,5 +48,11 @@ public class PredicateTests {
 		
 		Collection<Integer> oddSquares = Collections2.filter(ints, Predicates.and(isPerfectSquare, isOdd));
 		assertEquals("[1, 9, 25]", oddSquares.toString());
+
+		//Exception when you add a wrong element to a filtered list
+		//perfectSquares.add(35);
+
+		Collection<Integer> oddSquares2 = Collections2.filter(perfectSquares, isOdd);
+		System.out.println("oddSquares2: " + oddSquares2);
 	}
 }
