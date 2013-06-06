@@ -53,9 +53,11 @@ public class FunctionTests {
         Collection<Integer> transformed = Collections2.transform(untransformed, 
                                                                  doubleIt);
 
-        assertEquals("[2, 10, 12, 16, 18, 20, 88, 110, 38]", transformed.toString());
+        assertEquals("[2, 10, 12, 16, 18, 20, 88, 110, 38]", 
+                     transformed.toString());
 
-        assertEquals("[1, 5, 6, 8, 9, 10, 44, 55, 19]", untransformed.toString());
+        assertEquals("[1, 5, 6, 8, 9, 10, 44, 55, 19]", 
+                     untransformed.toString());
     }
 
     @Test()
@@ -70,7 +72,8 @@ public class FunctionTests {
                                                          10, 44, 55, 19);
         List<Integer> transformed = Lists.transform(untransformed, doubleIt);
 
-        assertEquals("[2, 10, 12, 16, 18, 20, 88, 110, 38]", transformed.toString());
+        assertEquals("[2, 10, 12, 16, 18, 20, 88, 110, 38]", 
+                     transformed.toString());
     }
 
     @Test()
@@ -85,7 +88,8 @@ public class FunctionTests {
                                                                10, 44, 55, 19);
         assertEquals( "[false, false, true, true, false, true, true, false, false]",
                       Collections2.transform(untransformed, oddIt).toString());
-        assertEquals("[1, 5, 6, 8, 9, 10, 44, 55, 19]", untransformed.toString());
+        assertEquals("[1, 5, 6, 8, 9, 10, 44, 55, 19]", 
+                     untransformed.toString());
     }
 }
 

@@ -14,7 +14,8 @@ public class SplitterTests {
 
     @Test
     public void simpleSplit() {
-        Iterable<String> items = Splitter.on(",").trimResults().split("Larry, Curly, Mo");
+        Iterable<String> items = Splitter.on(",").trimResults()
+                                     .split("Larry, Curly, Mo");
         List<String> itemList = Lists.newArrayList(items);
         assertEquals("Larry", itemList.get(0));
         assertEquals("Curly", itemList.get(1));
