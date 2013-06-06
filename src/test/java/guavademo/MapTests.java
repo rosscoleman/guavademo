@@ -1,6 +1,7 @@
 package guavademo;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,6 +30,7 @@ public class MapTests {
 		Map<String, String> immutableStateCapitalMap = ImmutableMap.copyOf(stateCapitalMap);
 		try {
 			immutableStateCapitalMap.put("Arizona", "Phoenix");
+			fail();
 		} catch (UnsupportedOperationException e) {
 			System.out.println("Can't add to an immutable map");
 		}

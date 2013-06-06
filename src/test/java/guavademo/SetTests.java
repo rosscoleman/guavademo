@@ -1,6 +1,7 @@
 package guavademo;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import java.util.List;
 import java.util.Set;
@@ -38,6 +39,7 @@ public class SetTests {
 		assertEquals("[1, 2, 3]", s.toString());
 		try {
 			s.add(4);
+			fail("Shouldn't be able to add to an ImmutableSet.");
 		} catch (UnsupportedOperationException e) {
 			System.out.println("Can't change an immutable set");
 		}

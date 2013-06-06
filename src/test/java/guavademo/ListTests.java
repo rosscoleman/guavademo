@@ -2,6 +2,7 @@ package guavademo;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,6 +54,7 @@ public class ListTests {
 		List<Integer> l = ImmutableList.of(1, 2, 3);
 		try {
 			l.set(2, 10);
+			fail();
 		} catch (UnsupportedOperationException e) {
 			System.out.println("You can't change an immutable list");
 		}
@@ -70,6 +72,7 @@ public class ListTests {
 		List<Integer> unmodifiableList = Collections.unmodifiableList(l);
 		try {
 			unmodifiableList.add(4);
+			fail();
 		} catch (UnsupportedOperationException e) {
 			System.out.println("You can't modify a collection using an unmodifiable reference.");
 		}

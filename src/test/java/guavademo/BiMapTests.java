@@ -58,6 +58,12 @@ public class BiMapTests {
 		assertEquals("AZ", biMap.get("Arizona")); //We changed the original map too! Inverse BiMap is a view.
 		System.out.println(biMap);
 		System.out.println(inverseBiMap);
+		
+		//This will fail because "MO" is already a value, and BiMaps are 1-1
+		//biMap.put("Mordor", "MO"); 
+		
+		//forcePut() will get rid of the key that was already associated with the value
+		biMap.forcePut("Mordor", "MO"); 
 	}
 	
 	@Test
