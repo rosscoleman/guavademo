@@ -34,7 +34,7 @@ public class MapTests {
 		} catch (UnsupportedOperationException e) {
 			System.out.println("Can't add to an immutable map");
 		}
-		}
+	}
 	
 	@Test
 	public void testImmutableMapOfMethod() {
