@@ -12,7 +12,7 @@ import com.google.common.collect.Lists;
 
 public class SplitterTests {
 
-	@Test
+    @Test
     public void simpleSplit() {
         Iterable<String> items = Splitter.on(",").trimResults().split("Larry, Curly, Mo");
         List<String> itemList = Lists.newArrayList(items);
@@ -20,17 +20,17 @@ public class SplitterTests {
         assertEquals("Curly", itemList.get(1));
         assertEquals("Mo", itemList.get(2));
     }
-	
-	@Test
-	public void mapSplit() {
-	    String value = "New Mexico -> Santa Fe, Texas -> Austin, Arizona -> Phoenix";
-	    Map<String, String> splitKeyValues = Splitter.on(",")
-	            .omitEmptyStrings()
-	            .trimResults()
-	            .withKeyValueSeparator(" -> ")
-	            .split(value);
-	     assertEquals(splitKeyValues.size(), 3);
-	     assertEquals("Santa Fe", splitKeyValues.get("New Mexico"));
-	     
-	}
+    
+    @Test
+    public void mapSplit() {
+        String value = "New Mexico -> Santa Fe, Texas -> Austin, Arizona -> Phoenix";
+        Map<String, String> splitKeyValues = Splitter.on(",")
+                .omitEmptyStrings()
+                .trimResults()
+                .withKeyValueSeparator(" -> ")
+                .split(value);
+         assertEquals(splitKeyValues.size(), 3);
+         assertEquals("Santa Fe", splitKeyValues.get("New Mexico"));
+         
+    }
 }

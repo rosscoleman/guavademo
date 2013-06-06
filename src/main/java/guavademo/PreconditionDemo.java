@@ -24,7 +24,8 @@ public class PreconditionDemo {
     
     public void addScore(Integer score) {
         checkNotNull(score);
-        checkArgument(score >= 0 && score <= 10, "Score must be between 0 and 10");
+        checkArgument(score >= 0 && score <= 10, 
+                "Score must be between 0 and 10");
         this.scores.add(score);
     }
 

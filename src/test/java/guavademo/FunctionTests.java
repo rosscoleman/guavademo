@@ -50,7 +50,8 @@ public class FunctionTests {
 
         Collection<Integer> untransformed = Lists
                 .newArrayList(1, 5, 6, 8, 9, 10, 44, 55, 19);
-        Collection<Integer> transformed = Collections2.transform(untransformed, doubleIt);
+        Collection<Integer> transformed = Collections2.transform(untransformed, 
+                                                                 doubleIt);
 
         assertEquals("[2, 10, 12, 16, 18, 20, 88, 110, 38]", transformed.toString());
 
@@ -65,7 +66,8 @@ public class FunctionTests {
             }
         };
 
-        List<Integer> untransformed = Lists.newArrayList(1, 5, 6, 8, 9, 10, 44, 55, 19);
+        List<Integer> untransformed = Lists.newArrayList(1, 5, 6, 8, 9, 
+                                                         10, 44, 55, 19);
         List<Integer> transformed = Lists.transform(untransformed, doubleIt);
 
         assertEquals("[2, 10, 12, 16, 18, 20, 88, 110, 38]", transformed.toString());
@@ -79,9 +81,10 @@ public class FunctionTests {
             }
         };
 
-        Collection<Integer> untransformed = Lists.newArrayList(1, 5, 6, 8, 9, 10, 44, 55, 19);
+        Collection<Integer> untransformed = Lists.newArrayList(1, 5, 6, 8, 9, 
+                                                               10, 44, 55, 19);
         assertEquals( "[false, false, true, true, false, true, true, false, false]",
-        		Collections2.transform(untransformed, oddIt).toString());
+                      Collections2.transform(untransformed, oddIt).toString());
         assertEquals("[1, 5, 6, 8, 9, 10, 44, 55, 19]", untransformed.toString());
     }
 }
