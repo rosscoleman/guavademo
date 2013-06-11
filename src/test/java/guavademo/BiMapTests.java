@@ -68,6 +68,7 @@ public class BiMapTests {
         // forcePut() will get rid of the key that was already
         // associated with the value
         biMap.forcePut("Mordor", "MO"); 
+        System.out.println(biMap);
     }
     
     @Test

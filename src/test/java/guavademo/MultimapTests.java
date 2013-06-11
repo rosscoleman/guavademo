@@ -25,7 +25,7 @@ public class MultimapTests {
         superBowlMap.put("Pittsburgh Steelers", 2009);
         
         System.out.println(superBowlMap.get("Dallas Cowboys"));
-        System.out.println(superBowlMap.get("Buffal Bills"));
+        System.out.println(superBowlMap.get("Buffalo Bills"));
         
         assertEquals(5, superBowlMap.get("Dallas Cowboys").size());
         assertEquals(6, superBowlMap.get("Pittsburgh Steelers").size());
